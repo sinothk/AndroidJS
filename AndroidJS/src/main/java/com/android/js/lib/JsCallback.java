@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import java.lang.ref.WeakReference;
 
 public class JsCallback {
+
     private static final String CALLBACK_JS_FORMAT = "javascript:%s.callback(%d, %d %s);";
     private int mIndex;
     private boolean mCouldGoOn;
@@ -38,6 +39,7 @@ public class JsCallback {
      * @throws JsCallbackException
      */
     public void apply (Object... args) throws JsCallbackException {
+
         if (mWebViewRef.get() == null) {
             throw new JsCallbackException("the WebView related to the JsCallback has been recycled");
         }

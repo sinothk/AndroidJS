@@ -27,7 +27,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-//    compile project(':AndroidJS')
+    compile project(':AndroidJS')
 
-    compile 'com.github.sinothk:AndroidJS:v1.0'
+//    compile 'com.github.sinothk:AndroidJS:v1.0'
 }
