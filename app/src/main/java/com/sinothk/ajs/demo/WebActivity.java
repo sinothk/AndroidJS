@@ -1,6 +1,5 @@
 package com.sinothk.ajs.demo;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,22 +10,22 @@ import android.webkit.WebViewClient;
 
 import com.android.js.lib.LogUtils;
 import com.android.js.lib.SafeWebView;
-import com.android.js.v1.JavaScriptInterface;
+import com.sinothk.js.v2.BizScriptInterface;
+import com.sinothk.js.v2.WebFrameBaseActivity;
 
-public class WebActivity extends Activity {
+public class WebActivity extends WebFrameBaseActivity {
     public static final String HTML = "file:///android_asset/test.html";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WebView webView = new InnerWebView(this);
-
         setContentView(webView);
 
         webView.loadUrl(HTML);
     }
 
-    private class InnerWebView extends SafeWebView {
+    protected class InnerWebView extends SafeWebView {
 
         public InnerWebView(Context context) {
             super(context);
@@ -37,7 +36,7 @@ public class WebActivity extends Activity {
             fixedAccessibilityInjectorException();
             WebSettings ws = getSettings();
             ws.setJavaScriptEnabled(true);
-            addJavascriptInterface(new JavaScriptInterface(this), "Android");
+            addJavascriptInterface(new BizScriptInterface(this), "Android");
             setWebChromeClient(new InnerWebChromeClient());
             setWebViewClient(new InnerWebViewClient());
         }
@@ -45,7 +44,7 @@ public class WebActivity extends Activity {
         public class InnerWebChromeClient extends SafeWebChromeClient {
 
             @Override
-            public void onProgressChanged (WebView view, int newProgress) {
+            public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress); // 务必放在方法体的第一行执行；
                 // to do your work
                 // ...

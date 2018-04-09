@@ -72,7 +72,6 @@ public class SafeWebView extends WebView {
      * @deprecated Android4.2.2及以上版本的addJavascriptInterface方法已经解决了安全问题，如果不使用“网页能将JS函数传到Java层”功能，不建议使用该类，毕竟系统的JS注入效率才是最高的；
      */
     @Override
-    @Deprecated
     public void addJavascriptInterface(Object interfaceObj, String interfaceName) {
         if (mJsCallJavas == null) {
             mJsCallJavas = new HashMap<String, JsCallJava>();

@@ -6,7 +6,7 @@
  * Copyright: Copyright (c) 2018
  */
 
-package com.android.js.v1;
+package com.sinothk.js.v2;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -14,9 +14,9 @@ import android.webkit.WebView;
 
 import com.android.js.lib.JsCallback;
 
-public class JavaScriptInterface extends NativeInterface {
+public class BizScriptInterface extends NativeInterface {
 
-    public JavaScriptInterface(WebView webView) {
+    public BizScriptInterface(WebView webView) {
         super(webView);
     }
 

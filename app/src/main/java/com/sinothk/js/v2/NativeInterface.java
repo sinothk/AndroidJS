@@ -1,8 +1,9 @@
-package com.android.js.v1;
+package com.sinothk.js.v2;
 
 import android.webkit.WebView;
 
 import com.android.js.lib.JsCallback;
+import com.sinothk.js.nativeApi.camera.CameraApi;
 
 /**
  * <pre>
@@ -25,6 +26,6 @@ public class NativeInterface extends ViewInterface {
      */
     @android.webkit.JavascriptInterface
     public void openCamera(final JsCallback jsCallback) {
-//        CameraApi.openCamera(jsCallback);
+        CameraApi.openCamera(jsCallback);
     }
 }

@@ -89,10 +89,10 @@
 
     <li>
         <div>
-            Android.openCamera(拍照)
+            getCamera().doCamera！
         </div>
         <button onclick="
-                Android.openCamera(function (msg) {
+                Android.getCamera().doCamera(function (msg) {
                         Android.toast(msg);
                     }
                 );
@@ -100,6 +100,39 @@
         </button>
     </li>
     <br/>
+
+    <li hidden>
+        气泡提示<br/>
+        代码：<br/>
+        <div>
+            Android.toast('我是气泡');
+        </div>
+        <button onclick="Android.toast('我是气泡');">测试</button>
+    </li>
+
+    <br/>
+    <li hidden>
+        测试代码执行时间<br/>
+        代码：<br/>
+        <div>
+            Android.testLossTime(new Date().getTime());
+        </div>
+        <button onclick="Android.testLossTime(new Date().getTime());">测试</button>
+    </li>
+
+    <br/>
+    <li hidden>
+        异步回调，传入js函数到Java方法,设定3秒后回调<br/>
+        代码：<br/>
+        <div>
+            Android.delayJsCallBack(3 * 1000, 'call back haha', function (msg) {
+            Android.toast(msg);
+            });
+        </div>
+        <button onclick="Android.delayJsCallBack(3 * 1000, 'call back haha', function (msg) {Android.toast(msg);});">
+            测试
+        </button>
+    </li>
 </ul>
 
 </body>

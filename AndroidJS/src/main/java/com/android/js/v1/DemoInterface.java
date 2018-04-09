@@ -62,4 +62,30 @@ public class DemoInterface {
             }
         }, ms);
     }
+
+    /**
+     *
+     * @param jsCallback
+     */
+    @android.webkit.JavascriptInterface
+    public void setString(String str, final JsCallback jsCallback) {
+        try {
+            jsCallback.apply(str);
+        } catch (JsCallback.JsCallbackException je) {
+            je.printStackTrace();
+        }
+    }
+
+    /**
+     *
+     * @param jsCallback
+     */
+    @android.webkit.JavascriptInterface
+    public void getString(final JsCallback jsCallback) {
+        try {
+            jsCallback.apply("http://www.sinothk.com");
+        } catch (JsCallback.JsCallbackException je) {
+            je.printStackTrace();
+        }
+    }
 }
