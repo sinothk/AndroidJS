@@ -15,7 +15,6 @@ import com.android.js.lib.JsCallback;
 import com.sinothk.js.v2.WebFrameBaseActivity;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

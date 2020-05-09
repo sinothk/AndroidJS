@@ -42,4 +42,51 @@ public class BizScriptInterface extends NativeInterface {
             }
         }).start();
     }
+
+    @android.webkit.JavascriptInterface
+    public void getString(final JsCallback jsCallback) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                final String userInfo = "LiangYT"; //"";
+
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            jsCallback.apply(userInfo);
+                        } catch (JsCallback.JsCallbackException je) {
+                            je.printStackTrace();
+                        }
+                    }
+                }, 0);
+            }
+        }).start();
+    }
+
+    @android.webkit.JavascriptInterface
+    public void setString(final String msg, final JsCallback jsCallback) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                final String userInfo = msg;
+
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            jsCallback.apply(userInfo);
+                        } catch (JsCallback.JsCallbackException je) {
+                            je.printStackTrace();
+                        }
+                    }
+                }, 0);
+            }
+        }).start();
+    }
+
 }
