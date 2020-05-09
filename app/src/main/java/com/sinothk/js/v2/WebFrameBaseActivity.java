@@ -3,8 +3,9 @@ package com.sinothk.js.v2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.Nullable;
 
 import com.android.js.lib.JsCallback;
 import com.sinothk.js.nativeApi.camera.CameraApi;
